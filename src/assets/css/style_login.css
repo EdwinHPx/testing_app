@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Estilos generales */
+body {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+}
+
+.login-container {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  font-weight: 400;
+}
+
+.login-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.login-card {
+  background: rgb(255, 255, 255);
+  border-radius: 15px;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  animation: fadeIn 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.login-card:hover {
+  box-shadow: 0 0 20px rgba(30, 60, 114, 0.5);
+  transform: translateY(-5px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.login-logo {
+  width: 120px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.5s ease-in-out;
+}
+
+.login-logo:hover {
+  background-color: #5277bd13;
+  transform: scale(1.1);
+}
+
+.form-input {
+  border-radius: 10px;
+  border: 2px solid #2a5298;
+  transition: 0.3s ease-in-out;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-input:focus {
+  border-color: #1e3c72;
+  box-shadow: 0 0 10px rgba(30, 60, 114, 0.3);
+}
+
+.login-btn {
+  background-color: #2a5298;
+  border: none;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+  background-color: #1e3c72;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(30, 60, 114, 0.5);
+}
+
+.btn-outline-secondary {
+  margin-bottom: 15px;
+  color: #2a5298;
+  border-color: #2a5298;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #2a5298;
+  color: white;
+  transform: scale(1.05);
+}
+
+.btn-dark {
+  margin-top: 15px;
+  background-color: #333;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-dark:hover {
+  background-color: #000;
+  transform: scale(1.05);
+}
+
+.ade-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+form label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.alert {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.text-primary {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.text-muted {
+  font-family: 'Montserrat', sans-serif;
+}

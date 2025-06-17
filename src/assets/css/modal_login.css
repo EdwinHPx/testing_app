@@ -1,0 +1,107 @@
+/*----------------------- MODAL DESARROLLADORES -------------------- */
+
+:root {
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+  }
+  
+/* Animación de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Imagen como botón para abrir modal */
+.dev-modal-trigger-img {
+    border-radius: 8px;
+    width: 150px;
+    cursor: pointer;
+    margin-top: 15px;
+    animation: fadeInUp 0.8s ease-out;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.dev-modal-trigger-img:hover {
+    border-radius: 15px;
+    transform: scale(1.4);
+}
+
+/* Modal */
+.dev-modal-content {
+    border-radius: 10px;
+    border: none;
+}
+
+.dev-modal-header {
+    background-color: #08267f !important;
+    color: rgb(255, 255, 255);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.dev-modal-title {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.dev-modal-body {
+    color: #333;
+    font-size: 16px;
+}
+
+.dev-modal-footer {
+    border-top: none;
+}
+
+/* Animación de mostrar y esconder el modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/* La clase .dev-modal es la que añadimos al div del modal */
+.dev-modal.fade.show {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.dev-modal.fade.hide {
+  animation: fadeOut 0.3s ease-in;
+}
+
+/*----------- Estilos para Swiper (carrusel) dentro del modal ---------*/
+.dev-modal-swiper {
+    padding-bottom: 40px; /* Espacio para la paginación */
+}
+
+.dev-modal-swiper .swiper-pagination-bullet-active {
+    background-color: #08267f !important; /* Color para la paginación activa */
+}
+
+.dev-modal-swiper .swiper-button-next,
+.dev-modal-swiper .swiper-button-prev {
+    color: #08267f !important; /* Color para las flechas de navegación */
+}

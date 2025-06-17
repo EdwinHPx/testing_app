@@ -1,0 +1,27 @@
+/* Estilo del contenedor del spinner */
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    background-color: #659dff79;
+  }
+  
+  /* Estilo de la imagen de carga */
+  .loading-image {
+    width: 100px; 
+    height: auto; 
+    animation: pulse 1.5s infinite ease-in-out; 
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

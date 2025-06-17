@@ -1,0 +1,558 @@
+/* --- PALETA DE COLORES Y VARIABLES GLOBALES (Consistente con otros módulos) --- */
+:root {
+  --primary-color: #3b82f6;
+  --primary-hover-color: #2563eb;
+  --accent-color: #14b8a6; /* Añadido para consistencia si se usa */
+  --danger-color: #ef4444;
+  --success-color: #22c55e; /* Añadido para consistencia si se usa */
+  --text-color: #1f2937;
+  --light-text-color: #6b7280;
+  --background-color: #f9fafb;
+  --card-background-color: #ffffff;
+  --header-background-color: #f8fafc;
+  --border-color: #e5e7eb;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --border-radius: 0.75rem;
+
+  /* Variables específicas del modal (inspirado en Asignaturas.css) */
+  --act-modal-bg: #ffffff;
+  --act-modal-border-radius: 1rem;
+  --act-modal-shadow: 0 10px 25px rgba(37, 99, 235, 0.12);
+  --act-header-color: #1e3a8a; /* Color para títulos de modal */
+  --act-border-color: #dbeafe; /* Un borde más suave para elementos internos del modal */
+  --act-blue-primary: #3b82f6;
+  --act-blue-secondary: #2563eb;
+  --act-blue-light: #93c5fd;
+  --act-blue-accent: #1d4ed8;
+}
+
+/* Fuente Montserrat para todo el módulo */
+.act-container,
+.act-container * {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Estilos base para el contenedor */
+.act-container {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  transition: all 0.2s ease-in-out;
+
+}
+ 
+/* --- Tarjeta Principal --- */
+.act-container .act-main-card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  background-color: var(--card-background-color);
+  transition: box-shadow 0.3s ease; /* Añadido para consistencia */
+}
+
+.act-container .act-main-card:hover { /* Añadido para consistencia */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Encabezado de Página --- */
+.act-container .act-component-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: var(--header-background-color); /* Cambiado a var(--header-background-color) */
+  border-bottom: 1px solid var(--border-color);
+}
+
+.act-container .act-header-content {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-grow: 1; 
+}
+
+.act-container .act-header-icon {
+  background-color: #e0e7ff;
+  color: var(--primary-hover-color);
+  border-radius: 0.5rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* Añadido para correcta alineación del título y subtítulo */
+.act-container .act-header-content > div:not(.act-header-icon) {
+  flex-grow: 1; 
+  text-align: left;
+}
+
+.act-container .act-header-title {
+  font-weight: 700;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.act-container .act-header-subtitle {
+  color: var(--light-text-color);
+  font-size: 0.95rem;
+  margin: 0.25rem 0 0 0;
+}
+
+/* Añadido para consistencia */
+.act-container .act-header-actions {
+  flex-shrink: 0;
+}
+
+.act-container .act-add-button {
+  background-color: var(--primary-color);
+  border: none;
+  font-weight: 500; /* Ajustado de 600 a 500 para consistencia con Asignaturas/Estudiantes */
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+.act-container .act-add-button:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.35);
+}
+
+/* --- Barra de Controles (Búsqueda y Botón "Nuevo") --- */
+.act-container .act-controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.act-container .act-search-bar {
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 50px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.act-container .act-search-bar:focus-within {
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  transform: translateY(-2px);
+}
+
+.act-container .act-search-bar .input-group-text {
+  background-color: white;
+  border: none;
+  padding-left: 1.2rem;
+  color: var(--primary-color);
+}
+
+.act-container .act-search-bar .form-control {
+  border: none;
+  padding: 0.75rem 1.2rem 0.75rem 0.5rem;
+  font-size: 0.95rem;
+}
+
+.act-container .act-search-bar .form-control:focus {
+  box-shadow: none;
+}
+
+/* --- Tabla Rediseñada --- */
+.act-container .act-table-container {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.act-container .act-table-wrapper {
+  background: white; /* Añadido para consistencia */
+  border-radius: var(--border-radius); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); /* Sombra sutil como en Asignaturas */
+  overflow: hidden;
+  border: 1px solid var(--border-color); 
+}
+
+.act-container .act-table {
+  margin-bottom: 0;
+  vertical-align: middle;
+  border-collapse: separate; /* Para consistencia */
+  border-spacing: 0; /* Para consistencia */
+  width: 100%; /* Para consistencia */
+}
+
+.act-container .act-table-header { /* Unificado con Asignaturas */
+  background-color: var(--header-background-color);
+  color: var(--light-text-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.act-container .act-table-header th {
+  padding: 1rem 1rem; /* Consistencia con Asignaturas */
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.act-container .act-sortable-header {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+  position: relative; /* Para iconos de ordenamiento */
+  vertical-align: middle; /* Para iconos de ordenamiento */
+}
+
+.act-container .act-sortable-header:hover {
+  color: var(--primary-color);
+}
+
+.act-container .act-table tbody tr { /* Añadido para consistencia */
+  transition: all 0.2s ease-in-out;
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5); /* Borde más sutil */
+}
+
+.act-container .act-table tbody tr:last-child { /* Añadido para consistencia */
+  border-bottom: none;
+}
+
+.act-container .act-table tbody tr:hover {
+  background-color: #eff6ff; /* Color de hover de Asignaturas/Estudiantes */
+}
+
+.act-container .act-table tbody td { /* Añadido para consistencia */
+  padding: 1rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.act-container .act-table .fw-medium { /* Añadido para consistencia */
+  font-weight: 600 !important;
+  color: var(--text-color);
+}
+
+
+/* --- Célula de Acciones (Editar/Eliminar) --- */
+.act-container .act-actions-cell {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.act-container .act-actions-cell .btn {
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.act-container .act-actions-cell .btn-outline-info { /* Estilos de Asignaturas */
+  color: var(--primary-color);
+  border-color: rgba(59, 130, 246, 0.3);
+  background-color: rgba(239, 246, 255, 0.8);
+}
+
+.act-container .act-actions-cell .btn-outline-info:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color); /* Añadido */
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+.act-container .act-actions-cell .btn-outline-danger { /* Estilos de Asignaturas */
+  color: var(--danger-color);
+  border-color: rgba(239, 68, 68, 0.3);
+  background-color: rgba(254, 242, 242, 0.8);
+}
+
+.act-container .act-actions-cell .btn-outline-danger:hover {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color); /* Añadido */
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+}
+
+/* --- Mensaje de "No hay resultados" --- */
+.act-container .act-no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--light-text-color);
+  display: flex; /* Para centrar mejor el icono y texto */
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.act-container .act-no-results p { /* Añadido para consistencia */
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.act-container .act-no-results-icon {
+  font-size: 2.5rem;
+  color: var(--border-color); /* Color más suave */
+  opacity: 0.5;
+  /* margin-bottom: 1rem; Eliminado, se usa gap */
+}
+
+/* --- Pie de Página Rediseñado --- */
+.act-container .act-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header-background-color); /* Consistencia */
+  color: var(--light-text-color); /* Consistencia */
+  padding: 1rem 1.5rem; /* Consistencia */
+  border-top: 1px solid var(--border-color);
+}
+
+.act-container .act-items-per-page {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.act-container .act-items-per-page span { /* Añadido para consistencia */
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.act-container .act-items-per-page-select {
+  width: 80px;
+  border-radius: 20px;
+  border-color: var(--border-color); /* Consistencia */
+  background-color: white; /* Consistencia */
+  font-size: 0.875rem; /* Consistencia */
+  padding: 0.4rem 0.75rem; /* Consistencia */
+  transition: all 0.2s ease; /* Consistencia */
+}
+
+.act-container .act-items-per-page-select:focus { /* Añadido para consistencia */
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+/* Paginación rediseñada (como en Asignaturas/Estudiantes) */
+.act-container .act-pagination {
+  margin-bottom: 0;
+  gap: 0.25rem;
+}
+
+.act-container .act-pagination .page-link {
+  color: var(--text-color);
+  font-weight: 500;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.act-container .act-pagination .page-link:hover {
+  background-color: rgba(239, 246, 255, 0.7);
+  color: var(--primary-color);
+}
+
+.act-container .act-pagination .page-item.disabled .page-link {
+  color: var(--light-text-color);
+  background-color: transparent;
+  opacity: 0.7;
+}
+
+.act-container .act-pagination .page-info {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  color: var(--text-color);
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.act-container .act-pagination-info {
+  color: var(--light-text-color);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* --- Estilos para el Modal de "Nueva Actividad" (inspirado en Asignaturas.css) --- */
+.act-modal .modal-dialog.act-modal-dialog {
+  max-width: 650px; /* Consistencia */
+  margin: 1.75rem auto; /* Consistencia */
+  transform: translateY(5px); /* Consistencia */
+  transition: transform 0.3s ease-out; /* Consistencia */
+}
+
+.act-modal.show .modal-dialog.act-modal-dialog { /* Consistencia */
+  transform: translateY(0);
+}
+
+.act-modal .modal-content.act-modal-content { /* Renombrado y unificado */
+  border-radius: var(--act-modal-border-radius);
+  box-shadow: var(--act-modal-shadow);
+  background-color: var(--act-modal-bg);
+  overflow: hidden;
+  border: 1px solid var(--border-color); /* Usar var(--border-color) general */
+}
+
+.act-modal .modal-header.act-modal-header { /* Renombrado */
+  background-color: #ffffff; /* Fondo blanco */
+  color: var(--act-header-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 2rem;
+  position: relative; /* Para el ::before del título */
+}
+
+.act-modal .modal-title.act-modal-title { /* Renombrado */
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--act-header-color); /* Usar color específico de header de modal */
+  position: relative;
+  padding-left: 1rem; /* Espacio para la barra vertical */
+}
+
+.act-modal .modal-title.act-modal-title::before { /* Barra vertical decorativa */
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--act-blue-primary), var(--act-blue-secondary));
+  border-radius: 4px;
+}
+
+.act-modal .btn-close { /* Estilo de Asignaturas/Estudiantes */
+  background-color: rgba(59, 130, 246, 0.15);
+  padding: 0.5rem;
+  border-radius: 50%;
+  opacity: 1;
+  transition: all 0.2s;
+}
+
+.act-modal .btn-close:hover { /* Estilo de Asignaturas/Estudiantes */
+  background-color: rgba(59, 130, 246, 0.25);
+  transform: rotate(90deg);
+}
+
+.act-modal .modal-body.act-modal-body { /* Renombrado */
+  padding: 2rem;
+  background-color: var(--act-modal-bg);
+  /* Efecto sutil de fondo como en Asignaturas/Estudiantes */
+  background-image: radial-gradient(circle at top right, rgba(59, 130, 246, 0.03) 0%, transparent 70%);
+}
+
+.act-modal .act-form-label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--text-color); /* Usar var(--text-color) */
+  display: block; /* Para que el margin-bottom funcione bien */
+  margin-bottom: 0.5rem;
+}
+
+.act-modal .form-control.act-form-control { /* Clase específica para inputs del modal */
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color); /* Usar var(--border-color) general */
+  border-radius: 0.5rem; /* Radio estándar */
+  transition: all 0.25s;
+  background-color: #fdfdfd; /* Ligeramente diferente de blanco puro */
+}
+
+.act-modal .form-control.act-form-control:focus {
+  border-color: var(--act-blue-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+  background-color: #ffffff; /* Fondo blanco al enfocar */
+  outline: 0;
+}
+
+.act-modal .form-control.act-form-control::placeholder { /* Estilo de placeholder */
+  color: #9ca3af; /* Gris estándar para placeholder */
+  font-style: italic;
+}
+
+.act-modal .act-required-field::after {
+  content: '*';
+  color: var(--danger-color);
+  margin-left: 4px;
+}
+
+.act-modal .modal-footer.act-modal-footer { /* Renombrado */
+  background-color: #f9fafb; /* Fondo de footer de modal */
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+}
+
+.act-modal .btn.act-modal-button-cancel { /* Clase específica */
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  letter-spacing: 0.02em;
+  background-color: #ffffff;
+  color: var(--light-text-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.act-modal .btn.act-modal-button-cancel:hover { /* Hover para cancelar */
+  background-color: #f9fafb;
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.act-modal .btn.act-modal-button-save { /* Clase específica */
+  background: linear-gradient(135deg, var(--act-blue-primary), var(--act-blue-secondary));
+  color: white;
+  border: none; /* Quitar borde si es un botón primario con fondo */
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 5px rgba(37, 99, 235, 0.15); /* Sombra sutil */
+}
+
+.act-modal .btn.act-modal-button-save:hover {
+  background: linear-gradient(135deg, var(--act-blue-secondary), var(--act-blue-accent));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* --- Animaciones y Estilos Específicos para el Módulo de Actividades de Apoyo --- */
+.act-container .card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(25, 118, 210, 0.1);
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.act-container .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(25, 118, 210, 0.2);
+}

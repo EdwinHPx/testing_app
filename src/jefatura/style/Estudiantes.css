@@ -1,0 +1,625 @@
+/* --- PALETA DE COLORES: TEMA AZUL --- */
+:root {
+  --primary-color: #3b82f6;
+  --primary-hover-color: #2563eb;
+  --accent-color: #14b8a6;
+  --danger-color: #ef4444;
+  --success-color: #22c55e;
+  --text-color: #1f2937;
+  --light-text-color: #6b7280;
+  --background-color: #f9fafb;
+  --card-background-color: #ffffff;
+  --header-background-color: #f8fafc;
+  --border-color: #e5e7eb;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --border-radius: 0.75rem;
+}
+
+/* Fuente Montserrat para todo el módulo */
+.stud-container,
+.stud-container * {
+  font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+/* Estilos base para el contenedor */
+.stud-container {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  /* padding: 1.5rem; */
+  min-height: 100vh;
+}
+ 
+/* --- Tarjeta Principal --- */
+.stud-container .stud-main-card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  background-color: var(--card-background-color);
+}
+
+.stud-container .stud-main-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* --- NUEVO ENCABEZADO DE PÁGINA --- */
+.stud-container .stud-component-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #f8fafc;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.stud-container .stud-header-content {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-grow: 1; 
+}
+
+.stud-container .stud-header-icon {
+  background-color: #e0e7ff;
+  color: var(--primary-hover-color);
+  border-radius: 0.5rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.stud-container .stud-header-content > div:not(.stud-header-icon) {
+  flex-grow: 1; 
+  text-align: left;
+}
+
+.stud-container .stud-header-title {
+  font-weight: 700;
+  color: var(--text-color);
+  font-size: 1.5rem;
+}
+
+.stud-container .stud-header-subtitle {
+  color: var(--light-text-color);
+  font-size: 0.95rem;
+  margin: 0.25rem 0 0 0;
+}
+
+.stud-container .stud-header-actions {
+  flex-shrink: 0;
+}
+
+/* --- Barra de Controles (Búsqueda y Botón "Nuevo") --- */
+.stud-container .stud-controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.stud-container .stud-search-bar {
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 50px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.stud-container .stud-search-bar:focus-within {
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  transform: translateY(-2px);
+}
+
+.stud-container .stud-search-bar .input-group-text {
+  background-color: white;
+  border: none;
+  padding-left: 1.2rem;
+  color: var(--primary-color);
+}
+
+.stud-container .stud-search-bar .form-control {
+  border: none;
+  padding: 0.75rem 1.2rem 0.75rem 0.5rem;
+  font-size: 0.95rem;
+}
+
+.stud-container .stud-search-bar .form-control:focus {
+  box-shadow: none;
+}
+
+.stud-container .stud-add-button {
+  background-color: var(--primary-color);
+  border: none;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+.stud-container .stud-add-button:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.35);
+}
+
+/* --- Tabla Rediseñada --- */
+.stud-container .stud-table-container {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.stud-container .stud-table-wrapper {
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius); /* Añadido para consistencia */
+}
+
+.stud-container .stud-table {
+  margin-bottom: 0;
+  vertical-align: middle;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.stud-container .stud-table-header {
+  background-color: var(--header-background-color);
+  color: var(--light-text-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stud-container .stud-table-header th {
+  padding: 1rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.stud-container .stud-sortable-header {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+  position: relative;
+  vertical-align: middle;
+}
+
+.stud-container .stud-sortable-header:hover {
+  color: var(--primary-color);
+}
+
+.stud-container .stud-table tbody tr {
+  transition: all 0.2s ease-in-out;
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.stud-container .stud-table tbody tr:last-child {
+  border-bottom: none;
+  
+}
+
+.stud-container .stud-table tbody tr:hover {
+  background-color: #eff6ff ;
+}
+
+.stud-container .stud-table tbody td {
+  padding: 1rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.stud-container .stud-table .fw-medium {
+  font-weight: 600 !important;
+  color: var(--text-color);
+}
+
+.stud-container .stud-table .badge {
+  background-color: #dbeafe !important;
+  color: #1e40af !important;
+  font-weight: 600;
+  padding: 0.5em 0.8em;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+}
+
+/* --- Célula de Acciones (Editar/Eliminar) --- */
+.stud-container .stud-actions-cell {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.stud-container .stud-actions-cell .btn {
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.stud-container .stud-actions-cell .btn-outline-info {
+  color: var(--primary-color);
+  border-color: rgba(59, 130, 246, 0.3);
+  background-color: rgba(239, 246, 255, 0.8);
+}
+
+.stud-container .stud-actions-cell .btn-outline-info:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+.stud-container .stud-actions-cell .btn-outline-danger {
+  color: var(--danger-color);
+  border-color: rgba(239, 68, 68, 0.3);
+  background-color: rgba(254, 242, 242, 0.8);
+}
+
+.stud-container .stud-actions-cell .btn-outline-danger:hover {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+}
+
+/* --- Mensaje de "No hay resultados" --- */
+.stud-container .stud-no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--light-text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stud-container .stud-no-results p {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.stud-container .stud-no-results-icon {
+  font-size: 2.5rem;
+  color: var(--border-color);
+  opacity: 0.5;
+}
+
+/* --- Pie de Página Rediseñado --- */
+.stud-container .stud-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header-background-color);
+  color: var(--light-text-color);
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.stud-container .stud-items-per-page {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.stud-container .stud-items-per-page span {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.stud-container .stud-items-per-page-select {
+  width: 80px;
+  border-radius: 20px;
+  border-color: var(--border-color);
+  background-color: white;
+  font-size: 0.875rem;
+  padding: 0.4rem 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.stud-container .stud-items-per-page-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+/* Paginación rediseñada */
+.stud-container .stud-pagination {
+  margin-bottom: 0;
+  gap: 0.25rem;
+}
+
+.stud-container .stud-pagination .page-link {
+  color: var(--text-color);
+  font-weight: 500;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.stud-container .stud-pagination .page-link:hover {
+  background-color: rgba(239, 246, 255, 0.7);
+  color: var(--primary-color);
+}
+
+.stud-container .stud-pagination .page-item.disabled .page-link {
+  color: var(--light-text-color);
+  background-color: transparent;
+  opacity: 0.7;
+}
+
+.stud-container .stud-pagination .page-info {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  color: var(--text-color);
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.stud-container .stud-pagination-info {
+  color: var(--light-text-color);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* --- Estilos para el Modal de "Nuevo Estudiante" --- */
+.stud-modal {
+  --stud-modal-bg: #ffffff;
+  --stud-modal-border-radius: 1rem;
+  --stud-modal-shadow: 0 10px 25px rgba(37, 99, 235, 0.12);
+  --stud-header-bg: #ecf3ff;
+  --stud-header-color: #1e3a8a;
+  --stud-border-color: #dbeafe;
+  --stud-footer-bg: #f0f7ff;
+  --stud-blue-primary: #3b82f6;
+  --stud-blue-secondary: #2563eb;
+  --stud-blue-light: #93c5fd;
+  --stud-blue-accent: #1d4ed8;
+}
+
+.stud-modal .modal-dialog.stud-modal-dialog {
+  max-width: 650px;
+  margin: 1.75rem auto;
+  transform: translateY(5px);
+  transition: transform 0.3s ease-out;
+}
+
+.stud-modal.show .modal-dialog.stud-modal-dialog {
+  transform: translateY(0);
+}
+
+.stud-modal .modal-content.stud-modal-content {
+  border: 1px solid var(--stud-border-color);
+  border-radius: var(--stud-modal-border-radius);
+  box-shadow: var(--stud-modal-shadow);
+  background-color: var(--stud-modal-bg);
+  overflow: hidden;
+}
+
+.stud-modal .modal-header.stud-modal-header {
+  background-color: #ffffff;
+  color: var(--stud-header-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 2rem;
+  position: relative;
+}
+
+.stud-modal .modal-title.stud-modal-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--stud-header-color);
+  position: relative;
+  padding-left: 1rem;
+}
+
+.stud-modal .modal-title.stud-modal-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--stud-blue-primary), var(--stud-blue-secondary));
+  border-radius: 4px;
+}
+
+.stud-modal .btn-close {
+  background-color: rgba(59, 130, 246, 0.15);
+  padding: 0.5rem;
+  border-radius: 50%;
+  opacity: 1;
+  transition: all 0.2s;
+}
+
+.stud-modal .btn-close:hover {
+  background-color: rgba(59, 130, 246, 0.25);
+  transform: rotate(90deg);
+}
+
+.stud-modal .modal-body.stud-modal-body {
+  padding: 2rem;
+  background-color: var(--stud-modal-bg);
+  background-image: radial-gradient(circle at top right, rgba(59, 130, 246, 0.03) 0%, transparent 70%);
+}
+
+.stud-modal .stud-form-label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--text-color);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.stud-modal .form-control.stud-form-control {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  transition: all 0.25s;
+  background-color: #fdfdfd;
+}
+
+.stud-modal .form-control.stud-form-control:focus {
+  border-color: var(--stud-blue-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+  background-color: #ffffff;
+  outline: 0;
+}
+
+.stud-modal .form-control.stud-form-control::placeholder {
+  color: #93c5fd;
+  font-style: italic;
+}
+
+.stud-modal .modal-footer.stud-modal-footer {
+  background-color: #f9fafb;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+}
+
+.stud-modal .btn.stud-modal-button-cancel {
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  letter-spacing: 0.02em;
+  background-color: #ffffff;
+  color: var(--light-text-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.stud-modal .btn.stud-modal-button-cancel:hover {
+  background-color: #f9fafb;
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.stud-modal .btn.stud-modal-button-save {
+  background: linear-gradient(135deg, var(--stud-blue-primary), var(--stud-blue-secondary));
+  color: white;
+}
+
+.stud-modal .btn.stud-modal-button-save:hover {
+  background: linear-gradient(135deg, var(--stud-blue-secondary), var(--stud-blue-accent));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.stud-modal .stud-required-field::after {
+  content: '*';
+  color: #ef4444;
+  margin-left: 4px;
+}
+
+.stud-modal .stud-form-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed #bfdbfe;
+  position: relative;
+}
+
+.stud-modal .stud-form-section::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--stud-blue-primary);
+}
+
+.stud-modal .stud-form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.stud-modal .stud-form-section:last-child::after {
+  display: none;
+}
+
+.stud-modal .stud-form-section-title {
+  font-size: 0.95rem;
+  color: var(--stud-blue-accent);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.stud-modal .form-control.stud-form-control:hover {
+  border-color: var(--stud-blue-light);
+}
+
+.stud-modal .form-group {
+  position: relative;
+}
+
+.stud-modal .form-control.stud-form-control:focus {
+  border-color: var(--stud-blue-primary);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.stud-modal .form-group::before {
+  content: '';
+  position: absolute;
+  top: 0.75rem;
+  left: -15px;
+  width: 3px;
+  height: 0;
+  background-color: var(--stud-blue-primary);
+  transition: height 0.25s ease;
+  opacity: 0;
+  border-radius: 3px;
+}
+
+.stud-modal .form-group:focus-within::before {
+  height: calc(100% - 1.5rem);
+  opacity: 1;
+}
+
+/* --- Animaciones y Estilos Específicos para el Módulo de Estudiantes --- */
+.stud-container .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(25, 118, 210, 0.1);
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stud-container .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(25, 118, 210, 0.2);
+}

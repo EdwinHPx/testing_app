@@ -1,0 +1,121 @@
+.layout-container {
+    min-height: 100vh;
+    background-color: #f0f5fa; /* Fondo ligeramente más azulado */
+    overflow-x: hidden; /* Evitar deslizamiento horizontal */
+    position: relative;
+    width: 100%;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    transition: all 0.3s ease;
+    margin-left: 260px; /* Actualizado para coincidir con el nuevo ancho del sidebar */
+    min-height: 100vh;
+    background-color: #f0f5fa; /* Actualizado para consistencia */
+    width: calc(100% - 260px); /* Ajustado según el nuevo ancho */
+}
+
+@media (max-width: 992px) {
+    .main-content {
+        margin-left: 0;
+        padding-top: 70px;
+        width: 100%; /* Ancho completo en móviles */
+    }
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(25, 118, 210, 0.1);
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 6px 12px rgba(94, 80, 198, 0.15); /* Sombra con toque azul-violáceo */
+    transform: translateY(-2px);
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+    font-weight: 600;
+    background-color: #f5f8ff !important; /* Fondo ligeramente azulado */
+}
+
+.table {
+    vertical-align: middle;
+}
+
+.btn-primary {
+    background-color: #1976d2; /* Azul principal - mantenido */
+    border-color: #1976d2;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #0d5ca0; /* Azul más oscuro */
+    border-color: #0d5ca0;
+}
+
+.btn-info {
+    background-color: #1a8caa; /* Nuevo azul-verdoso */
+    border-color: #1a8caa;
+    color: white;
+}
+
+.btn-info:hover, .btn-info:focus {
+    background-color: #157d99; /* Azul-verdoso más oscuro */
+    border-color: #157d99;
+    color: white;
+}
+
+.bg-primary {
+    background-color: #1976d2 !important; /* Azul principal - mantenido */
+}
+
+.bg-info {
+    background-color: #1a8caa !important; /* Nuevo azul-verdoso */
+}
+
+.bg-success {
+    background-color: #0e9577 !important; /* Verde-azulado para success */
+}
+
+.text-primary {
+    color: #1976d2 !important; /* Azul principal - mantenido */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #104e8b; /* Azul más profundo para encabezados */
+}
+
+.page-title {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #104e8b; /* Azul más profundo para títulos */
+    border-left: 5px solid #5e50c6; /* Acento azul-violáceo */
+    padding-left: 15px;
+}
+
+.search-wrapper {
+    position: relative;
+    flex-grow: 1;
+}
+
+.search-wrapper .form-control {
+    padding-left: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+
+.search-wrapper .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(30, 136, 229, 0.25); /* Azul más vibrante */
+    border-color: #64b5f6;
+}
+
+.search-wrapper svg {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #1a8caa; /* Nuevo azul-verdoso */
+}

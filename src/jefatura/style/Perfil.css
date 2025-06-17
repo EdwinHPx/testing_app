@@ -1,0 +1,169 @@
+:root {
+    --primary-color: #3b82f6;
+    --primary-hover-color: #2563eb;
+    --text-color: #1f2937;
+    --light-text-color: #6b7280;
+    --background-color: #f9fafb;
+    --card-background-color: #ffffff;
+    --header-background-color: #f8fafc;
+    --border-color: #e5e7eb;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --border-radius: 0.75rem;
+}
+
+.perfil-container input,
+.perfil-container select,
+.perfil-container button,
+.perfil-container textarea {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.perfil-container {
+    /* padding: 1.5rem; */
+    background-color: var(--background-color);
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* --- TARJETA PRINCIPAL --- */
+.perfil-main-card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    background-color: var(--card-background-color);
+    overflow: hidden; /* Importante para que el header se ajuste a los bordes redondeados */
+}
+
+/* --- NUEVO ENCABEZADO ESTÁNDAR --- */
+.perfil-component-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: var(--header-background-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.perfil-header-content {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.perfil-header-content > div:not(.perfil-header-icon) {
+  text-align: left;
+}
+
+.perfil-header-icon {
+    background-color: #e0e7ff;
+    color: var(--primary-hover-color);
+    border-radius: 0.5rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.perfil-header-title {
+    font-weight: 700;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.perfil-header-subtitle {
+    color: var(--light-text-color);
+    font-size: 0.95rem;
+    margin: 0.25rem 0 0 0;
+}
+
+/* --- TARJETAS DE SECCIÓN INTERNAS --- */
+.perfil-section-card {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: none; /* Quitamos la sombra de las tarjetas internas para un look más limpio */
+    background-color: var(--card-background-color);
+    height: 100%;
+}
+
+.perfil-section-card .card-header {
+    font-weight: 600;
+    font-size: 1.1rem;
+    background-color: var(--header-background-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+}
+
+.perfil-section-card .card-body {
+    padding: 1.5rem;
+}
+
+.perfil-display-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* --- ESTILOS DE FORMULARIO --- */
+.perfil-container .form-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--light-text-color);
+    margin-bottom: 0.25rem;
+}
+
+.perfil-container .form-control,
+.perfil-container .form-select {
+    background-color: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.perfil-container .form-control:focus,
+.perfil-container .form-select:focus {
+    background-color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.perfil-container .form-control:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+    color: var(--light-text-color);
+}
+
+/* --- BOTÓN DE ACTUALIZAR --- */
+.perfil-update-button {
+    background-color: var(--primary-color);
+    border: none;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.perfil-update-button:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- ANIMACIONES Y ESTILOS ESPECÍFICOS --- */
+.perfil-container .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(25, 118, 210, 0.1);
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.perfil-container .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(25, 118, 210, 0.2);
+}

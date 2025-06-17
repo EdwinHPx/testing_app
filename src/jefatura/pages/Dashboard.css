@@ -1,0 +1,399 @@
+/* Variables de color (pueden ser globales o específicas del dashboard) */
+:root {
+    --dashboard-primary-color: #3b82f6; /* Azul similar a Perfil */
+    --dashboard-primary-hover-color: #2563eb;
+    --dashboard-text-color: #1f2937;
+    --dashboard-light-text-color: #6b7280;
+    --dashboard-background-color: #f9fafb; /* Fondo general */
+    --dashboard-card-background-color: #ffffff;
+    --dashboard-header-background-color: #f8fafc; /* Fondo del encabezado de tarjeta */
+    --dashboard-border-color: #e5e7eb;
+    --dashboard-card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --dashboard-border-radius: 0.75rem;
+}
+
+.dashboard-container {
+  background-color: var(--dashboard-background-color); /* Usar variable */
+  /* padding: 1.5rem;  */
+  font-family: 'Montserrat', sans-serif; /* Añadido para consistencia con Perfil */
+}
+
+/* --- TARJETA PRINCIPAL DEL DASHBOARD --- */
+.dashboard-main-card {
+    border: none;
+    border-radius: var(--dashboard-border-radius);
+    box-shadow: var(--dashboard-card-shadow);
+    background-color: var(--dashboard-card-background-color);
+    overflow: hidden;
+}
+
+/* --- ENCABEZADO DEL COMPONENTE DASHBOARD --- */
+.dashboard-component-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: var(--dashboard-header-background-color);
+    border-bottom: 1px solid var(--dashboard-border-color);
+}
+
+.dashboard-header-content {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.dashboard-header-content > div:not(.dashboard-header-icon) {
+  text-align: left;
+}
+
+.dashboard-header-icon {
+    background-color: #e0e7ff; /* Un color de fondo para el icono, similar a Perfil */
+    color: var(--dashboard-primary-hover-color); /* Color del icono */
+    border-radius: 0.5rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem; /* Tamaño del icono */
+    flex-shrink: 0;
+}
+
+.dashboard-header-title {
+    font-weight: 700;
+    color: var(--dashboard-text-color);
+    font-size: 1.5rem; /* Tamaño del título del encabezado */
+    margin: 0;
+}
+
+.dashboard-header-subtitle {
+    color: var(--dashboard-light-text-color);
+    font-size: 0.95rem;
+    margin: 0.25rem 0 0 0;
+}
+
+/* --- ESTILOS PARA EL CONTENIDO DE BIENVENIDA --- */
+.dashboard-welcome-body {
+    padding: 2rem 2.5rem; /* Mayor padding para el cuerpo */
+}
+
+.dashboard-logo {
+    max-width: 250px; /* Ajusta el tamaño del logo según sea necesario */
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.dashboard-welcome-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--dashboard-text-color);
+    margin-bottom: 1rem;
+}
+
+.dashboard-welcome-text {
+    font-size: 1rem;
+    color: var(--dashboard-light-text-color);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-module-list {
+    list-style-type: none; /* Quita los bullets por defecto */
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-module-list li {
+    font-size: 1rem;
+    color: var(--dashboard-text-color);
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem; /* Espacio para el icono o marcador personalizado */
+    position: relative;
+}
+
+.dashboard-module-list li::before {
+    content: "✓"; /* Puedes usar un icono de FontAwesome o SVG aquí también */
+    color: var(--dashboard-primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.dashboard-module-list li strong {
+    color: var(--dashboard-text-color);
+}
+
+/* --- ESTILOS PARA PESTAÑAS --- */
+.dashboard-tabs-container {
+    padding: 0.5rem 1.5rem 1.5rem; /* Reducido el padding superior */
+}
+
+.dashboard-nav-tabs {
+    border-bottom: 1px solid var(--dashboard-border-color); /* Línea divisoria para las pestañas */
+}
+
+.dashboard-nav-tabs .nav-link {
+    color: var(--dashboard-light-text-color);
+    font-weight: 600;
+    border: none; /* Quitar bordes por defecto de Bootstrap */
+    border-bottom: 3px solid transparent; /* Borde inferior para estado activo/hover */
+    padding: 0.75rem 1.25rem;
+    transition: all 0.2s ease-in-out;
+    margin-right: 0.5rem; /* Espacio entre pestañas */
+}
+
+.dashboard-nav-tabs .nav-link:hover {
+    color: var(--dashboard-primary-color);
+    border-bottom-color: var(--dashboard-primary-hover-color);
+}
+
+.dashboard-nav-tabs .nav-link.active {
+    color: var(--dashboard-primary-color);
+    border-bottom-color: var(--dashboard-primary-color);
+    background-color: transparent; 
+}
+
+/* --- ESTILOS PARA LA PESTAÑA "ACERCA DE" --- */
+.dashboard-about-section {
+    color: var(--dashboard-text-color);
+}
+
+.dashboard-ade-logo {
+    width: auto;
+    height: 100px; /* Altura fija para ambos logos */
+    margin: 0 auto; /* Para centrado en vistas móviles */
+    display: inline-block; /* Cambio para mejor alineación horizontal */
+}
+
+/* Línea divisoria entre logos */
+.dashboard-logo-divider {
+    width: 2px;
+    height: 100px;
+    background-color: var(--dashboard-border-color);
+    margin: 0 auto;
+}
+
+.dashboard-about-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--dashboard-primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-about-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--dashboard-light-text-color);
+}
+
+.dashboard-about-text strong {
+    color: var(--dashboard-text-color);
+}
+
+.dashboard-section-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--dashboard-text-color);
+    /* border-bottom: 2px solid var(--dashboard-primary-color); */
+    /* padding-bottom: 0.5rem; */
+    /* display: inline-block; */ /* Comentado para que sea full-width si es text-center */
+}
+
+.dashboard-leader-title,
+.dashboard-contributors-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dashboard-text-color);
+    margin-bottom: 1rem;
+}
+
+.dashboard-dev-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 4px solid var(--dashboard-card-background-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.dashboard-dev-img-small {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 3px solid var(--dashboard-card-background-color);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+
+.dashboard-dev-name {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    color: var(--dashboard-text-color);
+}
+.dashboard-dev-role {
+    font-size: 0.9rem;
+    color: var(--dashboard-light-text-color);
+}
+
+.dashboard-dev-name-small {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    color: var(--dashboard-light-text-color);
+    line-height: 1.3;
+}
+
+.dashboard-sm-logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+.dashboard-sm-text {
+    font-size: 0.95rem;
+    color: var(--dashboard-light-text-color);
+    font-style: italic;
+}
+
+/* --- ANIMACIONES PARA LAS IMÁGENES --- */
+.fade-in-logo {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.7);
+    animation: scaleIn 0.7s ease-out forwards;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.7s ease-out forwards;
+}
+
+.fade-in-delayed {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out 0.3s forwards;
+}
+
+/* Escalonamiento para los contribuidores */
+.staggered-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.staggered-fade-in:nth-child(1) { animation-delay: 0.1s; }
+.staggered-fade-in:nth-child(2) { animation-delay: 0.2s; }
+.staggered-fade-in:nth-child(3) { animation-delay: 0.3s; }
+.staggered-fade-in:nth-child(4) { animation-delay: 0.4s; }
+.staggered-fade-in:nth-child(5) { animation-delay: 0.5s; }
+.staggered-fade-in:nth-child(6) { animation-delay: 0.6s; }
+.staggered-fade-in:nth-child(7) { animation-delay: 0.7s; }
+.staggered-fade-in:nth-child(8) { animation-delay: 0.8s; }
+
+/* Definición de las animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { 
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from { 
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from { 
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to { 
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-welcome-body {
+    padding: 1.5rem;
+  }
+  .dashboard-welcome-title {
+    font-size: 1.5rem;
+  }
+  .dashboard-logo {
+    max-width: 180px;
+  }
+  .dashboard-about-title {
+    font-size: 1.4rem;
+  }
+  .dashboard-dev-img {
+    width: 100px;
+    height: 100px;
+  }
+  .dashboard-dev-img-small {
+    width: 70px;
+    height: 70px;
+  }
+  .dashboard-nav-tabs .nav-link {
+    padding: 0.75rem 0.5rem; /* Menor padding en móvil para las pestañas */
+    font-size: 0.9rem;
+  }
+  .dashboard-ade-logo {
+    width: auto;
+    height: 80px;
+    margin-bottom: 1rem; /* Espacio entre logos en móvil */
+    display: block; /* En móvil cada logo en su propia línea */
+  }
+  
+  /* Añadir una línea horizontal en vista móvil */
+  .dashboard-about-section .row:first-child .col-12:first-child::after {
+    content: '';
+    display: block;
+    width: 80%;
+    height: 2px;
+    background-color: var(--dashboard-border-color);
+    margin: 1rem auto;
+  }
+}

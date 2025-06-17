@@ -1,0 +1,195 @@
+/* @font-face {
+    font-family: 'Lato'; 
+    src: url('/fonts/Lato-Regular.woff2') format('woff2'),
+         url('/fonts/Lato-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+} */
+
+.sidebar {
+    width: 260px;
+    background: linear-gradient(165deg, #0a2351 0%, #1a4b9c 60%, #2766db 100%);
+    color: white;
+    z-index: 1030;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.sidebar-header {
+    background: linear-gradient(135deg, rgba(10, 35, 81, 0.9) 0%, rgba(26, 75, 156, 0.9) 100%);
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.sidebar-logo-container {
+    background: hsla(209, 100%, 70%, 0.063);
+    border-radius: 10%;
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.sidebar-logo-container:hover {
+    background: rgba(3, 72, 81, 0.078);
+    transform: scale(1.05);
+}
+
+.sidebar-header:hover {
+    transform: scale(1.01);
+    background: linear-gradient(135deg, rgba(10, 35, 81, 0.95) 0%, rgba(26, 75, 156, 0.95) 100%);
+}
+
+.sidebar-divider {
+    margin: 0 16px;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    border-radius: 6px;
+    margin: 3px 10px;
+    transition: all 0.3s ease;
+    padding: 11px 15px;
+    font-size: 0.95rem;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Montserrat', Arial, sans-serif;
+    display: block;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.nav-link:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), transparent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.08);
+    transform: translateX(5px);
+}
+
+.nav-link:hover:before {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: white;
+    background: linear-gradient(90deg, rgba(100, 181, 246, 0.2), rgba(100, 181, 246, 0.05));
+    border-left: 4px solid #64b5f6;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link svg {
+    margin-right: 12px;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover svg,
+.nav-link.active svg {
+    color: #90caf9;
+}
+
+.log-out {
+    background: linear-gradient(90deg, rgba(244, 67, 54, 0.1), transparent);
+    color: #ffcdd2 !important;
+    margin-top: 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.log-out:hover {
+    background: linear-gradient(90deg, rgba(244, 67, 54, 0.2), rgba(244, 67, 54, 0.05));
+    color: #fff !important;
+}
+
+.log-out svg {
+    color: #ef9a9a;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 10;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.close-btn:hover {
+    color: #90caf9;
+    transform: rotate(90deg);
+}
+
+/* Mobile sidebar */
+@media (max-width: 992px) {
+    .sidebar {
+        position: fixed;
+        left: -260px;
+        top: 0;
+        height: 100vh;
+        box-shadow: none;
+    }
+
+    .sidebar.open {
+        left: 0;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Customize scrollbar for webkit browsers */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}

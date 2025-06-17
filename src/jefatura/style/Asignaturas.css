@@ -1,0 +1,585 @@
+/* --- PALETA DE COLORES: TEMA AZUL --- */
+:root {
+  --primary-color: #3b82f6;
+  --primary-hover-color: #2563eb;
+  --accent-color: #14b8a6;
+  --danger-color: #ef4444;
+  --success-color: #22c55e;
+  --text-color: #1f2937;
+  --light-text-color: #6b7280;
+  --background-color: #f9fafb;
+  --card-background-color: #ffffff;
+  --header-background-color: #f8fafc;
+  --border-color: #e5e7eb;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --border-radius: 0.75rem;
+}
+
+/* Fuente Montserrat para todo el módulo */
+.asig-container,
+.asig-container * {
+  font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+/* Estilos base para el contenedor */
+.asig-container {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+ 
+/* --- Tarjeta Principal --- */
+.asig-container .asig-main-card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  background-color: var(--card-background-color);
+}
+
+.asig-container .asig-main-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* --- NUEVO ENCABEZADO DE PÁGINA --- */
+.asig-container .asig-component-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #f8fafc;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.asig-container .asig-header-content {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-grow: 1; 
+}
+
+.asig-container .asig-header-icon {
+  background-color: #e0e7ff;
+  color: var(--primary-hover-color);
+  border-radius: 0.5rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.asig-container .asig-header-content > div:not(.asig-header-icon) {
+  flex-grow: 1; 
+  text-align: left; /* Alineamos a la izquierda para un look estándar */
+}
+
+.asig-container .asig-header-title {
+  font-weight: 700;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.asig-container .asig-header-subtitle {
+  color: var(--light-text-color);
+  font-size: 0.95rem;
+  margin: 0.25rem 0 0 0;
+}
+
+.asig-container .asig-header-actions {
+  flex-shrink: 0;
+}
+
+/* --- Barra de Controles (Búsqueda y Botón "Nuevo") --- */
+.asig-container .asig-controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.asig-container .asig-search-bar {
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 50px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.asig-container .asig-search-bar:focus-within {
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  transform: translateY(-2px);
+}
+
+.asig-container .asig-search-bar .input-group-text {
+  background-color: white;
+  border: none;
+  padding-left: 1.2rem;
+  color: var(--primary-color);
+}
+
+.asig-container .asig-search-bar .form-control {
+  border: none;
+  padding: 0.75rem 1.2rem 0.75rem 0.5rem;
+  font-size: 0.95rem;
+}
+
+.asig-container .asig-search-bar .form-control:focus {
+  box-shadow: none;
+}
+
+.asig-container .asig-add-button {
+  background-color: var(--primary-color);
+  border: none;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+.asig-container .asig-add-button:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.35);
+}
+
+/* --- Tabla Rediseñada --- */
+.asig-container .asig-table-container {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.asig-container .asig-table-wrapper {
+  background: white;
+  border-radius: var(--border-radius); /* Cambiado de 1rem a var(--border-radius) */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  border: 1px solid var(--border-color); /* Cambiado a var(--border-color) */
+}
+
+.asig-container .asig-table {
+  margin-bottom: 0;
+  vertical-align: middle;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.asig-container .asig-table-header {
+  background-color: var(--header-background-color);
+  color: var(--light-text-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.asig-container .asig-table-header th {
+  padding: 1rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.asig-container .asig-sortable-header {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+  position: relative;
+  vertical-align: middle;
+}
+
+.asig-container .asig-sortable-header:hover {
+  color: var(--primary-color);
+}
+
+.asig-container .asig-table tbody tr {
+  transition: all 0.2s ease-in-out;
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.asig-container .asig-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.asig-container .asig-table tbody tr:hover {
+  background-color: #eff6ff;
+}
+
+.asig-container .asig-table tbody td {
+  padding: 1rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.asig-container .asig-table .fw-medium {
+  font-weight: 600 !important;
+  color: var(--text-color);
+}
+
+.asig-container .asig-table .badge {
+  background-color: #dbeafe !important;
+  color: #1e40af !important;
+  font-weight: 600;
+  padding: 0.5em 0.8em;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+}
+
+/* --- Célula de Acciones (Editar/Eliminar) --- */
+.asig-container .asig-actions-cell {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.asig-container .asig-actions-cell .btn {
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.asig-container .asig-actions-cell .btn-outline-info {
+  color: var(--primary-color);
+  border-color: rgba(59, 130, 246, 0.3);
+  background-color: rgba(239, 246, 255, 0.8);
+}
+
+.asig-container .asig-actions-cell .btn-outline-info:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+.asig-container .asig-actions-cell .btn-outline-danger {
+  color: var(--danger-color);
+  border-color: rgba(239, 68, 68, 0.3);
+  background-color: rgba(254, 242, 242, 0.8);
+}
+
+.asig-container .asig-actions-cell .btn-outline-danger:hover {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+}
+
+/* --- Mensaje de "No hay resultados" --- */
+.asig-container .asig-no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--light-text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.asig-container .asig-no-results p {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.asig-container .asig-no-results-icon {
+  font-size: 2.5rem;
+  color: var(--border-color);
+  opacity: 0.5;
+}
+
+/* --- Pie de Página Rediseñado --- */
+.asig-container .asig-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header-background-color);
+  color: var(--light-text-color);
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.asig-container .asig-items-per-page {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.asig-container .asig-items-per-page span {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.asig-container .asig-items-per-page-select {
+  width: 80px;
+  border-radius: 20px;
+  border-color: var(--border-color);
+  background-color: white;
+  font-size: 0.875rem;
+  padding: 0.4rem 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.asig-container .asig-items-per-page-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+/* Paginación rediseñada */
+.asig-container .asig-pagination {
+  margin-bottom: 0;
+  gap: 0.25rem;
+}
+
+.asig-container .asig-pagination .page-link {
+  color: var(--text-color);
+  font-weight: 500;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.asig-container .asig-pagination .page-link:hover {
+  background-color: rgba(239, 246, 255, 0.7);
+  color: var(--primary-color);
+}
+
+.asig-container .asig-pagination .page-item.disabled .page-link {
+  color: var(--light-text-color);
+  background-color: transparent;
+  opacity: 0.7;
+}
+
+.asig-container .asig-pagination .page-info {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  color: var(--text-color);
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.asig-container .asig-pagination-info {
+  color: var(--light-text-color);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* --- Estilos para el Modal de "Nueva Asignatura" --- */
+.asig-modal {
+  --asig-modal-bg: #ffffff;
+  --asig-modal-border-radius: 1rem;
+  --asig-modal-shadow: 0 10px 25px rgba(37, 99, 235, 0.12);
+  --asig-header-color: #1e3a8a;
+  --asig-border-color: #dbeafe;
+  --asig-blue-primary: #3b82f6;
+  --asig-blue-secondary: #2563eb;
+  --asig-blue-light: #93c5fd;
+  --asig-blue-accent: #1d4ed8;
+}
+
+.asig-modal .modal-dialog.asig-modal-dialog {
+  max-width: 650px;
+  margin: 1.75rem auto;
+  transform: translateY(5px);
+  transition: transform 0.3s ease-out;
+}
+
+.asig-modal.show .modal-dialog.asig-modal-dialog {
+  transform: translateY(0);
+}
+
+.asig-modal .modal-content.asig-modal-content {
+  border-radius: var(--asig-modal-border-radius);
+  box-shadow: var(--asig-modal-shadow);
+  background-color: var(--asig-modal-bg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.asig-modal .modal-header.asig-modal-header {
+  background-color: #ffffff;
+  color: var(--asig-header-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 2rem;
+  position: relative;
+}
+
+.asig-modal .modal-title.asig-modal-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--asig-header-color);
+  position: relative;
+  padding-left: 1rem;
+}
+
+.asig-modal .modal-title.asig-modal-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--asig-blue-primary), var(--asig-blue-secondary));
+  border-radius: 4px;
+}
+
+.asig-modal .btn-close {
+  background-color: rgba(59, 130, 246, 0.15);
+  padding: 0.5rem;
+  border-radius: 50%;
+  opacity: 1;
+  transition: all 0.2s;
+}
+
+.asig-modal .btn-close:hover {
+  background-color: rgba(59, 130, 246, 0.25);
+  transform: rotate(90deg);
+}
+
+.asig-modal .modal-body.asig-modal-body {
+  padding: 2rem;
+  background-color: var(--asig-modal-bg);
+  background-image: radial-gradient(circle at top right, rgba(59, 130, 246, 0.03) 0%, transparent 70%);
+}
+
+.asig-modal .asig-form-label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--text-color);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.asig-modal .form-control.asig-form-control {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  transition: all 0.25s;
+  background-color: #fdfdfd;
+}
+
+.asig-modal .form-control.asig-form-control:focus {
+  border-color: var(--asig-blue-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+  background-color: #ffffff;
+  outline: 0;
+}
+
+.asig-modal .form-control.asig-form-control::placeholder {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.asig-modal .modal-footer.asig-modal-footer {
+  background-color: #f9fafb;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+}
+
+.asig-modal .btn.asig-modal-button-cancel {
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  letter-spacing: 0.02em;
+  background-color: #ffffff;
+  color: var(--light-text-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.asig-modal .btn.asig-modal-button-cancel:hover {
+  background-color: #f9fafb;
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.asig-modal .btn.asig-modal-button-save {
+  background: linear-gradient(135deg, var(--asig-blue-primary), var(--asig-blue-secondary));
+  color: white;
+  border: none;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 5px rgba(37, 99, 235, 0.15);
+}
+
+.asig-modal .btn.asig-modal-button-save:hover {
+  background: linear-gradient(135deg, var(--asig-blue-secondary), var(--asig-blue-accent));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.asig-modal .asig-required-field::after {
+  content: '*';
+  color: #ef4444;
+  margin-left: 4px;
+}
+
+.asig-modal .asig-form-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed var(--asig-border-color);
+  position: relative;
+}
+
+.asig-modal .asig-form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.asig-modal .asig-form-section-title {
+  font-size: 0.95rem;
+  color: var(--asig-blue-accent);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* --- Animaciones y Estilos Específicos para el Módulo Asignaturas --- */
+.asig-container .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(25, 118, 210, 0.1);
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.asig-container .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(25, 118, 210, 0.2);
+}
